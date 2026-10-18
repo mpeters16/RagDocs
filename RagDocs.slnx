@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/RagDocs.Api/RagDocs.Api.csproj" />
+    <Project Path="src/RagDocs.AppHost/RagDocs.AppHost.csproj" />
+    <Project Path="src/RagDocs.ServiceDefaults/RagDocs.ServiceDefaults.csproj" />
+  </Folder>
+</Solution>

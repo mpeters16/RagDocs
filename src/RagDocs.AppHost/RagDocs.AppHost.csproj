@@ -1,0 +1,20 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.6.1">
+
+  <ItemGroup>
+    <ProjectReference Include="..\RagDocs.Api\RagDocs.Api.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.6.1" />
+    <PackageReference Include="MessagePack" Version="3.1.12" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    
+    <AspireUseCliBundle>true</AspireUseCliBundle>
+    <UserSecretsId>33e5a5ff-82a6-4b9c-b505-6609947d67c9</UserSecretsId>
+  </PropertyGroup>
+
+</Project>
