@@ -2,6 +2,7 @@
   <Folder Name="/src/">
     <Project Path="src/RagDocs.Api/RagDocs.Api.csproj" />
     <Project Path="src/RagDocs.AppHost/RagDocs.AppHost.csproj" />
+    <Project Path="src/RagDocs.Application/RagDocs.Application.csproj" />
     <Project Path="src/RagDocs.Domain/RagDocs.Domain.csproj" />
     <Project Path="src/RagDocs.ServiceDefaults/RagDocs.ServiceDefaults.csproj" />
   </Folder>

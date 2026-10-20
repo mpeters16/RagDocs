@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\RagDocs.Domain\RagDocs.Domain.csproj" />
+    <ProjectReference Include="..\..\src\RagDocs.Application\RagDocs.Application.csproj" />
   </ItemGroup>
 
 </Project>

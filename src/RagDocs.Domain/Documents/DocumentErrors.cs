@@ -49,4 +49,10 @@ public static class DocumentErrors
     public static readonly Error InvalidStatusTransition = Error.Conflict(
         "Document.InvalidStatusTransition",
         "The document cannot move to that status from its current status.");
+
+    // Not found errors
+
+    public static readonly Error NotFound = Error.NotFound(
+        "Document.NotFound",
+        "The document was not found.");
 }
