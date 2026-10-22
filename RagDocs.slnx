@@ -4,6 +4,7 @@
     <Project Path="src/RagDocs.AppHost/RagDocs.AppHost.csproj" />
     <Project Path="src/RagDocs.Application/RagDocs.Application.csproj" />
     <Project Path="src/RagDocs.Domain/RagDocs.Domain.csproj" />
+    <Project Path="src/RagDocs.Infrastructure/RagDocs.Infrastructure.csproj" />
     <Project Path="src/RagDocs.ServiceDefaults/RagDocs.ServiceDefaults.csproj" />
   </Folder>
   <Folder Name="/tests/">

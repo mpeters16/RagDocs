@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup>  <UserSecretsId>f772aa5b-3a65-4ed0-886a-c5cc9c5bad60</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RagDocs.Application\RagDocs.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.6.1" />
+    <PackageReference Include="EFCore.NamingConventions" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="10.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.13" />
+  </ItemGroup>
+
+</Project>

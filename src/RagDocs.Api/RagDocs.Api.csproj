@@ -6,10 +6,16 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.13">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\RagDocs.ServiceDefaults\RagDocs.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\RagDocs.Infrastructure\RagDocs.Infrastructure.csproj" />
+    <ProjectReference Include="..\RagDocs.Application\RagDocs.Application.csproj" />
   </ItemGroup>
 
 </Project>

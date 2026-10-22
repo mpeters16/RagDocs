@@ -1,20 +1,22 @@
+using RagDocs.Api.Extensions;
+using RagDocs.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Turns on logging, tracing, health checks and service discovery
 // (comes from the ServiceDefaults project).
 builder.AddServiceDefaults();
+builder.AddInfrastructure();
 
-// Creates a description of your endpoints for tools and docs.
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    // Shows that description at /openapi/v1.json while developing.
     app.MapOpenApi();
+    await app.ApplyMigrationsAsync();
 }
-
 app.UseHttpsRedirection();
 
 // Adds /health and /alive so Aspire can check the API is OK.
