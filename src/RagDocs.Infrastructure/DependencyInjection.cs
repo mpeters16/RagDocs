@@ -5,6 +5,7 @@ using Microsoft.Extensions.Hosting;
 using RagDocs.Application.Abstractions;
 using RagDocs.Infrastructure.Persistence;
 using RagDocs.Infrastructure.Persistence.Repositories;
+using RagDocs.Infrastructure.Storage;
 
 namespace RagDocs.Infrastructure;
 
@@ -24,6 +25,14 @@ public static class DependencyInjection
         builder.Services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<RagDbContext>());
 
         builder.Services.AddScoped<IDocumentRepository, DocumentRepository>();
+
+         // File storage
+        builder.Services.AddOptions<StorageOptions>()
+            .BindConfiguration(StorageOptions.SectionName)
+            .Validate(o => !string.IsNullOrWhiteSpace(o.RootPath), "Storage:RootPath is required.")
+            .ValidateOnStart();
+
+        builder.Services.AddSingleton<IFileStore, LocalFileStore>();
 
         return builder;
     }
