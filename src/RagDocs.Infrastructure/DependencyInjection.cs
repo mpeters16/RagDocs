@@ -7,6 +7,9 @@ using RagDocs.Infrastructure.Extraction;
 using RagDocs.Infrastructure.Persistence;
 using RagDocs.Infrastructure.Persistence.Repositories;
 using RagDocs.Infrastructure.Storage;
+using Microsoft.Extensions.AI;
+using OllamaSharp;
+using RagDocs.Infrastructure.AI;
 
 namespace RagDocs.Infrastructure;
 
@@ -38,7 +41,29 @@ public static class DependencyInjection
         // Text extraction and token counting
         builder.Services.AddSingleton<ITextExtractor, TextExtractor>();
         builder.Services.AddSingleton<ITokenCounter, CharacterTokenCounter>();
+
+        //AI
+        AddAi(builder);
         
         return builder;
+    }
+
+        private static void AddAi(IHostApplicationBuilder builder)
+    {
+        builder.Services.AddOptions<AiOptions>()
+            .BindConfiguration(AiOptions.SectionName);
+
+        var embedding = OllamaConnection.Parse(builder.Configuration.GetConnectionString("embedding"), "embedding");
+        var chat = OllamaConnection.Parse(builder.Configuration.GetConnectionString("chat"), "chat");
+
+        IEmbeddingGenerator<string, Embedding<float>> embeddingGenerator =
+            new OllamaApiClient(embedding.Endpoint, embedding.Model);
+
+        IChatClient chatClient = new OllamaApiClient(chat.Endpoint, chat.Model);
+
+        builder.Services.AddEmbeddingGenerator(embeddingGenerator);
+        builder.Services.AddChatClient(chatClient);   // used in session 6
+
+        builder.Services.AddSingleton<IEmbeddingService, EmbeddingService>();
     }
 }

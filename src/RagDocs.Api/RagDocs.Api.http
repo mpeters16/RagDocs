@@ -1,6 +1,18 @@
-@RagDocs.Api_HostAddress = http://localhost:5270
+@host = https://localhost:7121
 
-GET {{RagDocs.Api_HostAddress}}/
-Accept: application/json
+### Health check
+GET {{host}}/health
 
-###
+### Semantic similarity (Development only)
+POST {{host}}/dev/similarity
+Content-Type: application/json
+
+{
+  "question": "How many days of holiday do I get?",
+  "texts": [
+    "The annual leave allowance is 25 days per year.",
+    "Remote work is allowed two days per week.",
+    "The canteen opens at 8am.",
+    "Employees can carry over up to five unused vacation days."
+  ]
+}

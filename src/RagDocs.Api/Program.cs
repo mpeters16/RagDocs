@@ -45,9 +45,9 @@ app.UseStatusCodePages();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapDevEndpoints();
     await app.ApplyMigrationsAsync();
 }
-
 app.UseHttpsRedirection();
 
 app.MapDefaultEndpoints();
