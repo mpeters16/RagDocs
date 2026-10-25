@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using RagDocs.Application.Documents.Get;
 using RagDocs.Application.Documents.List;
 using RagDocs.Application.Documents.Upload;
+using RagDocs.Application.Ingestion;
 
 namespace RagDocs.Application;
 
@@ -15,6 +16,8 @@ public static class DependencyInjection
         services.AddScoped<UploadDocumentHandler>();
         services.AddScoped<GetDocumentHandler>();
         services.AddScoped<ListDocumentsHandler>();
+
+        services.AddSingleton<Chunker>();
 
         return services;
     }

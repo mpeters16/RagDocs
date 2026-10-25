@@ -17,8 +17,13 @@
   </ItemGroup>
 
   <ItemGroup>
+  <None Update="TestData\**\*" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\RagDocs.Domain\RagDocs.Domain.csproj" />
     <ProjectReference Include="..\..\src\RagDocs.Application\RagDocs.Application.csproj" />
+    <ProjectReference Include="..\..\src\RagDocs.Infrastructure\RagDocs.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

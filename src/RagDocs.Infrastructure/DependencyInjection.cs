@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RagDocs.Application.Abstractions;
+using RagDocs.Infrastructure.Extraction;
 using RagDocs.Infrastructure.Persistence;
 using RagDocs.Infrastructure.Persistence.Repositories;
 using RagDocs.Infrastructure.Storage;
@@ -33,7 +34,11 @@ public static class DependencyInjection
             .ValidateOnStart();
 
         builder.Services.AddSingleton<IFileStore, LocalFileStore>();
-
+        
+        // Text extraction and token counting
+        builder.Services.AddSingleton<ITextExtractor, TextExtractor>();
+        builder.Services.AddSingleton<ITokenCounter, CharacterTokenCounter>();
+        
         return builder;
     }
 }
