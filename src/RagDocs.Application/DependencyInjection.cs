@@ -16,6 +16,7 @@ public static class DependencyInjection
         services.AddScoped<UploadDocumentHandler>();
         services.AddScoped<GetDocumentHandler>();
         services.AddScoped<ListDocumentsHandler>();
+        services.AddScoped<ProcessNextDocumentHandler>();
 
         services.AddSingleton<Chunker>();
 

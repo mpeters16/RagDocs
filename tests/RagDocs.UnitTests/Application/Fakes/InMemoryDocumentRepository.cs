@@ -25,4 +25,19 @@ internal sealed class InMemoryDocumentRepository : IDocumentRepository
                 .ToList());
 
     public void Add(Document document) => Documents.Add(document);
+
+    public Task<Document?> ClaimNextPendingAsync(CancellationToken cancellationToken)
+    {
+        var next = Documents
+            .Where(d => d.Status == DocumentStatus.Pending)
+            .OrderBy(d => d.CreatedAt)
+            .FirstOrDefault();
+
+        next?.StartProcessing(DateTimeOffset.UtcNow);
+
+        return Task.FromResult(next);
+    }
+
+     public Task<int> ResetStuckProcessingAsync(CancellationToken cancellationToken) =>
+        Task.FromResult(0);
 }

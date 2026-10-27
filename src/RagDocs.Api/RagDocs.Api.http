@@ -7,12 +7,7 @@ GET {{host}}/health
 POST {{host}}/dev/similarity
 Content-Type: application/json
 
-{
-  "question": "How many days of holiday do I get?",
-  "texts": [
-    "The annual leave allowance is 25 days per year.",
-    "Remote work is allowed two days per week.",
-    "The canteen opens at 8am.",
-    "Employees can carry over up to five unused vacation days."
-  ]
-}
+
+--RagDocsBoundary
+Content-Disposition: form-data; name="file"; filename="sample-contract.pdf"
+Content-Type: application/pdf

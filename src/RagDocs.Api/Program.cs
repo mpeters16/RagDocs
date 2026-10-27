@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Http.Features;
+using RagDocs.Api.Background;
 using RagDocs.Api.Common;
 using RagDocs.Api.Endpoints;
 using RagDocs.Api.Extensions;
@@ -36,6 +37,8 @@ builder.Services.Configure<FormOptions>(options =>
     options.MultipartBodyLengthLimit = MaxRequestBodyBytes);
 
 builder.Services.AddOpenApi();
+
+builder.Services.AddHostedService<IngestionWorker>();
 
 var app = builder.Build();
 

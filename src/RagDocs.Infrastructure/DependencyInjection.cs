@@ -65,5 +65,6 @@ public static class DependencyInjection
         builder.Services.AddChatClient(chatClient);   // used in session 6
 
         builder.Services.AddSingleton<IEmbeddingService, EmbeddingService>();
+        builder.Services.AddScoped<IChunkRepository, ChunkRepository>();
     }
 }
