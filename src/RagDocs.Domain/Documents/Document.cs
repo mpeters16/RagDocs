@@ -160,4 +160,14 @@ public sealed class Document
 
     private static bool IsValidSha256Hex(string? value) =>
         value is { Length: Sha256HexLength } && value.All(char.IsAsciiHexDigit);
+
+    public Result EnsureCanBeDeleted()
+    {
+        if (Status == DocumentStatus.Processing)
+        {
+            return DocumentErrors.StillProcessing;
+        }
+
+        return Result.Success();
+    }
 }

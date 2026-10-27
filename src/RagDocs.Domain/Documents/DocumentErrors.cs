@@ -55,4 +55,8 @@ public static class DocumentErrors
     public static readonly Error NotFound = Error.NotFound(
         "Document.NotFound",
         "The document was not found.");
+
+    public static readonly Error StillProcessing = Error.Conflict(
+        "Document.StillProcessing",
+        "The document is being processed. Try again in a moment.");
 }

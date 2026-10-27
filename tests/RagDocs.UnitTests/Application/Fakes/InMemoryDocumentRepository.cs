@@ -26,6 +26,8 @@ internal sealed class InMemoryDocumentRepository : IDocumentRepository
 
     public void Add(Document document) => Documents.Add(document);
 
+    public void Remove(Document document) => Documents.Remove(document);
+
     public Task<Document?> ClaimNextPendingAsync(CancellationToken cancellationToken)
     {
         var next = Documents

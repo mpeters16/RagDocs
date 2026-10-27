@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using RagDocs.Api.Common;
 using RagDocs.Application.Documents;
+using RagDocs.Application.Documents.Delete;
 using RagDocs.Application.Documents.Get;
 using RagDocs.Application.Documents.List;
 using RagDocs.Application.Documents.Upload;
@@ -19,6 +20,8 @@ internal static class DocumentEndpoints
         group.MapGet("/", ListAsync);
 
         group.MapGet("/{id:guid}", GetAsync);
+
+        group.MapDelete("/{id:guid}", DeleteAsync);
 
         return app;
     }
@@ -74,5 +77,20 @@ internal static class DocumentEndpoints
         }
 
         return TypedResults.Ok(result.Value);
+    }
+
+     private static async Task<Results<NoContent, ProblemHttpResult>> DeleteAsync(
+        Guid id,
+        DeleteDocumentHandler handler,
+        CancellationToken cancellationToken)
+    {
+        var result = await handler.HandleAsync(id, cancellationToken);
+
+        if (result.IsFailure)
+        {
+            return result.Error.ToProblem();
+        }
+
+        return TypedResults.NoContent();
     }
 }

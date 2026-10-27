@@ -35,6 +35,8 @@ internal sealed class DocumentRepository(RagDbContext dbContext, TimeProvider ti
 
     public void Add(Document document) => dbContext.Documents.Add(document);
 
+    public void Remove(Document document) => dbContext.Documents.Remove(document);
+
     public async Task<Document?> ClaimNextPendingAsync(CancellationToken cancellationToken)
     {
         // 1. Find the oldest Pending document

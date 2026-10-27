@@ -19,6 +19,7 @@ public interface IDocumentRepository
         CancellationToken cancellationToken);
 
     void Add(Document document);
+    void Remove(Document document);
 
     // Takes the oldest Pending document and marks it Processing. Null when there's nothing to do.
     Task<Document?> ClaimNextPendingAsync(CancellationToken cancellationToken);

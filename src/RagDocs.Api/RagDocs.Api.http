@@ -11,3 +11,6 @@ Content-Type: application/json
 --RagDocsBoundary
 Content-Disposition: form-data; name="file"; filename="sample-contract.pdf"
 Content-Type: application/pdf
+
+### Delete a document (paste an id from the list)
+DELETE {{host}}/documents/<id>
