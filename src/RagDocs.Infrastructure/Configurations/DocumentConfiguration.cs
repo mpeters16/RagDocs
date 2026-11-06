@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RagDocs.Domain.Documents;
 
-namespace RagDocs.Infrastructure.Persistence.Configurations;
+namespace RagDocs.Infrastructure.Configurations;
 
 internal sealed class DocumentConfiguration : IEntityTypeConfiguration<Document>
 {

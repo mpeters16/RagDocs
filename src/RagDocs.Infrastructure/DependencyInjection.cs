@@ -10,6 +10,7 @@ using RagDocs.Infrastructure.Storage;
 using Microsoft.Extensions.AI;
 using OllamaSharp;
 using RagDocs.Infrastructure.AI;
+using RagDocs.Infrastructure.Search;
 
 namespace RagDocs.Infrastructure;
 
@@ -19,7 +20,9 @@ public static class DependencyInjection
     {
         builder.Services.AddDbContext<RagDbContext>(options =>
             options
-                .UseNpgsql(builder.Configuration.GetConnectionString("ragdocs"))
+                .UseNpgsql(
+                    builder.Configuration.GetConnectionString("ragdocs"),
+                    npgsql => npgsql.UseVector())
                 .UseSnakeCaseNamingConvention());
 
         // Aspire extras: health check, connection retries, database calls in the dashboard traces.
@@ -66,5 +69,6 @@ public static class DependencyInjection
 
         builder.Services.AddSingleton<IEmbeddingService, EmbeddingService>();
         builder.Services.AddScoped<IChunkRepository, ChunkRepository>();
+        builder.Services.AddScoped<IChunkSearch, VectorChunkSearch>();
     }
 }

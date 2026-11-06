@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using RagDocs.Infrastructure;
 using RagDocs.Infrastructure.Persistence;
 
 namespace RagDocs.Api.Extensions;

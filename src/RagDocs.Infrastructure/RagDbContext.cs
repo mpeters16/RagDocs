@@ -3,7 +3,7 @@ using RagDocs.Application.Abstractions;
 using RagDocs.Domain.Chunks;
 using RagDocs.Domain.Documents;
 
-namespace RagDocs.Infrastructure.Persistence;
+namespace RagDocs.Infrastructure;
 
 public sealed class RagDbContext(DbContextOptions<RagDbContext> options)
     : DbContext(options), IUnitOfWork

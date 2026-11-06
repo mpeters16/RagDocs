@@ -20,10 +20,10 @@ public sealed class RagDbContextFactory : IDesignTimeDbContextFactory<RagDbConte
         var connectionString =
             configuration.GetConnectionString("ragdocs") ?? FallbackConnectionString;
 
-        var options = new DbContextOptionsBuilder<RagDbContext>()
-            .UseNpgsql(connectionString)
-            .UseSnakeCaseNamingConvention()
-            .Options;
+       var options = new DbContextOptionsBuilder<RagDbContext>()
+        .UseNpgsql(connectionString, npgsql => npgsql.UseVector())   
+        .UseSnakeCaseNamingConvention()
+        .Options;
 
         return new RagDbContext(options);
     }

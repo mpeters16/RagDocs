@@ -14,3 +14,13 @@ Content-Type: application/pdf
 
 ### Delete a document (paste an id from the list)
 DELETE {{host}}/documents/<id>
+
+
+### Search (no AI answer, just the best chunks)
+POST {{host}}/search
+Content-Type: application/json
+
+{
+  "question": "How much notice do I need to give to end the contract?",
+  "topK": 3
+}
