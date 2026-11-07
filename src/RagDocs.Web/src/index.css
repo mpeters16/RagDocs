@@ -1,0 +1,72 @@
+:root {
+    --bg: #f7f7f8;
+    --surface: #ffffff;
+    --text: #1d1d1f;
+    --muted: #6b6b73;
+    --border: #e2e2e6;
+    --accent: #3b5bdb;
+    --danger: #c92a2a;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161618;
+      --surface: #1f1f22;
+      --text: #ececef;
+      --muted: #9a9aa3;
+      --border: #34343a;
+      --accent: #748ffc;
+      --danger: #ff6b6b;
+    }
+  }
+  
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  
+  .topbar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .brand { font-weight: 700; }
+  .topbar nav { display: flex; gap: 1rem; }
+  .topbar a { color: var(--muted); text-decoration: none; }
+  .topbar a.active { color: var(--accent); font-weight: 600; }
+  
+  main { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+  
+  .upload { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .upload p { flex-basis: 100%; margin: 0; }
+  
+  button {
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; cursor: default; }
+  button.danger { color: var(--danger); }
+  
+  table { width: 100%; border-collapse: collapse; background: var(--surface); }
+  th, td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  th { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+  
+  .badge { display: inline-block; padding: 0.1rem 0.55rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; }
+  .badge-pending { background: #e9ecef; color: #495057; }
+  .badge-processing { background: #fff3bf; color: #8a6d00; }
+  .badge-ready { background: #d3f9d8; color: #2b8a3e; }
+  .badge-failed { background: #ffe3e3; color: #c92a2a; }
+  
+  .muted { color: var(--muted); }
+  .nowrap { white-space: nowrap; }
+  .small { font-size: 0.8rem; margin-top: 0.25rem; }
+  .error { color: var(--danger); }
+  .info { color: var(--accent); }
