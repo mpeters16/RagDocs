@@ -65,10 +65,11 @@ public static class DependencyInjection
         IChatClient chatClient = new OllamaApiClient(chat.Endpoint, chat.Model);
 
         builder.Services.AddEmbeddingGenerator(embeddingGenerator);
-        builder.Services.AddChatClient(chatClient);   // used in session 6
+        builder.Services.AddChatClient(chatClient);   
 
         builder.Services.AddSingleton<IEmbeddingService, EmbeddingService>();
         builder.Services.AddScoped<IChunkRepository, ChunkRepository>();
         builder.Services.AddScoped<IChunkSearch, VectorChunkSearch>();
+        builder.Services.AddSingleton<IAnswerGenerator, AnswerGenerator>();
     }
 }

@@ -27,4 +27,5 @@ builder.AddProject<Projects.RagDocs_Api>("api")
     .WaitFor(embeddingModel)
     .WaitFor(chatModel);
 
+
 builder.Build().Run();

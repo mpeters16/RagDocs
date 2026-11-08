@@ -1,4 +1,7 @@
+using System.Text;
+using RagDocs.Api.Common;
 using RagDocs.Application.Abstractions;
+using RagDocs.Application.Search;
 
 namespace RagDocs.Api.Endpoints;
 
@@ -9,6 +12,42 @@ internal static class DevEndpoints
     {
         app.MapPost("/dev/similarity", SimilarityAsync)
             .ExcludeFromDescription();
+
+        app.MapPost("/dev/ask-preview", async Task<IResult> (
+            DevAskRequest request,
+            SearchChunksHandler search,
+            Application.Ask.PromptBuilder prompts,
+            IAnswerGenerator answers,
+            CancellationToken cancellationToken) =>
+        {
+            var found = await search.HandleAsync(new SearchChunksQuery(request.Question), cancellationToken);
+            if (found.IsFailure)
+            {
+                return found.Error.ToProblem();
+            }
+
+            var prompt = prompts.Build(request.Question, found.Value);
+
+            var answer = new StringBuilder();
+            await foreach (var piece in answers.StreamAnswerAsync(prompt, cancellationToken))
+            {
+                answer.Append(piece);
+            }
+
+            return TypedResults.Ok(new
+            {
+                Answer = answer.ToString(),
+                Sources = found.Value.Select((chunk, index) => new
+                {
+                    Number = index + 1,
+                    chunk.FileName,
+                    chunk.PageNumber,
+                    Score = Math.Round(chunk.Score, 3),
+                }),
+                prompt.System,
+                prompt.User,
+            });
+        });
 
         return app;
     }
@@ -44,4 +83,8 @@ internal static class DevEndpoints
     }
 
     internal sealed record SimilarityRequest(string Question, string[] Texts);
+
+    public sealed record DevAskRequest(string Question);
+
+    
 }

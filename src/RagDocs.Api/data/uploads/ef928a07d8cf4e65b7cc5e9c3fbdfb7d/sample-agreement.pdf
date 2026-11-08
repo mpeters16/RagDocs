@@ -1,0 +1,78 @@
+%PDF-1.7
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R /AcroForm << /Fields [7 0 R] /SigFlags 1 /DA (/Helv 0 Tf 0 g) /DR << /Font << /Helv 4 0 R >> >> >> >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 1804 >>
+stream
+BT /F2 20 Tf 72 720 Td (Sample Service Agreement) Tj ET
+BT /F1 10 Tf 72 700 Td (SignVault test document - not a real contract) Tj ET
+0.6 G 0.5 w 72 690 m 540 690 l S 0 G
+BT /F1 11 Tf 72 660 Td (This Service Agreement is made between Example Provider Ltd \(the "Provider"\)) Tj ET
+BT /F1 11 Tf 72 644 Td (and the person signing below \(the "Client"\).) Tj ET
+BT /F1 11 Tf 72 612 Td (1. Services. The Provider will deliver the services described in the attached) Tj ET
+BT /F1 11 Tf 72 596 Td (   statement of work, on the dates agreed in writing by both parties.) Tj ET
+BT /F1 11 Tf 72 580 Td (2. Fees. The Client will pay the fees set out in the statement of work within) Tj ET
+BT /F1 11 Tf 72 564 Td (   30 days of each invoice.) Tj ET
+BT /F1 11 Tf 72 548 Td (3. Term. This agreement starts on the date of signature and runs for 12 months) Tj ET
+BT /F1 11 Tf 72 532 Td (   unless either party ends it with 30 days' written notice.) Tj ET
+BT /F1 11 Tf 72 516 Td (4. Confidentiality. Each party will keep the other's confidential information) Tj ET
+BT /F1 11 Tf 72 500 Td (   private and use it only to perform this agreement.) Tj ET
+BT /F1 11 Tf 72 484 Td (5. Electronic signature. The parties agree that an electronic signature on this) Tj ET
+BT /F1 11 Tf 72 468 Td (   document has the same effect as a handwritten one.) Tj ET
+BT /F2 12 Tf 72 380 Td (Client signature) Tj ET
+0.95 0.97 1 rg 72 290 260 70 re f
+0.2 0.4 0.8 RG 1 w [4 3] 0 d 72 290 260 70 re S [] 0 d 0 G
+0.2 0.4 0.8 rg
+BT /F2 12 Tf 170 322 Td (Sign here) Tj ET
+0 g
+BT /F1 9 Tf 72 272 Td ({{signature:client}}) Tj ET
+BT /F1 11 Tf 360 340 Td (Full name:) Tj ET
+0.5 w 420 338 m 540 338 l S
+BT /F1 11 Tf 360 305 Td (Date:) Tj ET
+0.5 w 420 303 m 540 303 l S
+BT /F1 8 Tf 72 72 Td (Generated for SignVault Phase 1 upload and signing tests.) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Widget /FT /Sig /T (ClientSignature) /Rect [72 290 332 360] /F 4 /P 3 0 R /DA (/Helv 0 Tf 0 g) /AP << /N 9 0 R >> >>
+endobj
+8 0 obj
+<< /Title (Sample Service Agreement) /Creator (SignVault sample generator) >>
+endobj
+9 0 obj
+<< /Type /XObject /Subtype /Form /BBox [0 0 260 70] /Length 0 >>
+stream
+
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000163 00000 n 
+0000000220 00000 n 
+0000000372 00000 n 
+0000000469 00000 n 
+0000000571 00000 n 
+0000002427 00000 n 
+0000002585 00000 n 
+0000002678 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R /Info 8 0 R >>
+startxref
+2776
+%%EOF

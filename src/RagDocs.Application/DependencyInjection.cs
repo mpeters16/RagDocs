@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using RagDocs.Application.Ask;
 using RagDocs.Application.Documents.Delete;
 using RagDocs.Application.Documents.Get;
 using RagDocs.Application.Documents.List;
@@ -23,6 +24,7 @@ public static class DependencyInjection
 
         services.AddSingleton<Chunker>();
         services.AddScoped<SearchChunksHandler>();
+        services.AddSingleton<PromptBuilder>();
         return services;
     }
 }

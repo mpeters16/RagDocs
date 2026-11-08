@@ -24,3 +24,9 @@ Content-Type: application/json
   "question": "How much notice do I need to give to end the contract?",
   "topK": 3
 }
+
+### Preview: search + prompt + answer (Development only)
+POST {{host}}/dev/ask-preview
+Content-Type: application/json
+
+{ "question": "How much notice do I need to give to end the contract?" }
