@@ -45,6 +45,8 @@ public static class DependencyInjection
         builder.Services.AddSingleton<ITextExtractor, TextExtractor>();
         builder.Services.AddSingleton<ITokenCounter, CharacterTokenCounter>();
 
+builder.Services.AddScoped<IChunkSearch, VectorChunkSearch>();
+builder.Services.AddSingleton<IAnswerGenerator, AnswerGenerator>();
         //AI
         AddAi(builder);
         

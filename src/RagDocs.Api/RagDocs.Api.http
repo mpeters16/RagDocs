@@ -30,3 +30,9 @@ POST {{host}}/dev/ask-preview
 Content-Type: application/json
 
 { "question": "How much notice do I need to give to end the contract?" }
+
+### Ask (streams; REST Client shows it when complete)
+POST {{host}}/ask
+Content-Type: application/json
+
+{ "question": "When do invoices have to be paid?" }

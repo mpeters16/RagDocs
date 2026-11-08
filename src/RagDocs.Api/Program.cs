@@ -56,5 +56,6 @@ app.UseHttpsRedirection();
 app.MapDefaultEndpoints();
 app.MapDocumentEndpoints();
 app.MapSearchEndpoints();
+app.MapAskEndpoints();
 
 app.Run();

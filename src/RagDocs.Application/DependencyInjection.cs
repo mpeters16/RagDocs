@@ -25,6 +25,8 @@ public static class DependencyInjection
         services.AddSingleton<Chunker>();
         services.AddScoped<SearchChunksHandler>();
         services.AddSingleton<PromptBuilder>();
+        services.AddScoped<AskQuestionHandler>();
+        
         return services;
     }
 }
